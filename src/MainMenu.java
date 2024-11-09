@@ -14,11 +14,12 @@ public class MainMenu {
             } else if (Continue == 'Y') {
                 isPlaying = true;
             }
-        System.out.println("==========================\nWelcome To The Game Show!" +
-                "\n==========================\n" +
-                "enter 0 To Exit\n" +
-                "enter 1 To Play \"Guess The Number\"\n" +
-                "enter 2 To Play \"Blind Man's Bluff\"");
+//        HANDLED INSIDE INDEX.HTML
+//        System.out.println("==========================\nWelcome To The Game Show!" +
+//                "\n==========================\n" +
+//                "enter 0 To Exit\n" +
+//                "enter 1 To Play \"Guess The Number\"\n" +
+//                "enter 2 To Play \"Blind Man's Bluff\"");
         int GameSelect = GameSelector.nextInt();
             if(GameSelect == 0){
                 System.out.println("Thanks For Playing! Code By: Rashidi Alleyne");
