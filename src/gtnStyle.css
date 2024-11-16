@@ -1,0 +1,70 @@
+body{
+    background-color: #31393C;
+    font-size: 2rem;
+    max-width: 100vw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "header" "main";
+    max-height: 100vh;
+    margin: 0;
+}
+
+header{
+    grid-area: header;
+    background-color: #3B8CDD;
+    margin: 0;
+    padding: 10px;
+}
+header h1{
+    font-size: 1.5rem;
+    margin: 0;
+    color: #101010;
+
+}
+
+header a{
+    text-decoration: none;
+    color: #101010;
+}
+
+.main{
+    grid-area: main;
+    padding: 20px;
+    color: #FFFFFF;
+}
+
+#min, #max{
+    background-color: #31393C;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+#up, #down{
+    background-color: #FFFFFF;
+    color: #101010;
+}
+
+#up:hover,
+#down:hover{
+    background-color: #8B8F91;
+    cursor: pointer;
+    color: #3B8CDD;
+}
+
+#guess{
+    font-size: 7em;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+}
