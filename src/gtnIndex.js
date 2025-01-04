@@ -1,5 +1,5 @@
-const min = 0;
-const max = 10;
+let min = 0;
+let max = 10;
 let user = document.getElementById('guess');
 let minRange = document.getElementById('min')
 let maxRange = document.getElementById('max');
@@ -7,47 +7,51 @@ let hiddenNum;
 document.addEventListener('DOMContentLoaded', () => {
     user.setAttribute('min', min.toString());
     user.setAttribute('max', max.toString());
+    hiddenNum = Math.floor(Math.random() * max + min);
+    
     minRange.addEventListener(('change'), () => {
         user.setAttribute('min', minRange.value);
+        min = parseInt(minRange.value)
+        hiddenNum = Math.floor(Math.random() * max + min);
     });
     maxRange.addEventListener(('change'), () => {
         user.setAttribute('max', maxRange.value);
+        max = parseInt(minRange.value)
+        hiddenNum = Math.floor(Math.random() * max + min);
     });
     
-    hiddenNum = Math.floor(Math.random() * max);
 });
 
-document.getElementById('submit').addEventListener('click',e =>{
-    e.preventDefault();
-    let guess = document.getElementById('guess').value;
-    console.log(guess, hiddenNum)
-    switch(guess){
-        case guess < hiddenNum:
-            alert("Sorry Chief, that aint it, too low, try again");
-            break;
-        case guess > hiddenNum:
-            alert("Sorry Chief, that aint it, too high try again");
-            break;
-        case guess === hiddenNum:
-            hiddenNum = Math.floor(Math.random() * max);
-            alert("CONGRATS YOU GUESSED THE NUMBER");
-            break;
-        default:
-            break;
+document.getElementById('submit').addEventListener('click', event =>{
+    event.preventDefault();
+    let guess = parseInt(document.getElementById('guess').value);
+
+    if (guess < hiddenNum) {
+        alert("Too low, try again");
+    } else if (guess > hiddenNum) {
+        alert("Too high, try again");
+    } else if (guess === hiddenNum) {
+        hiddenNum = Math.floor(Math.random() * max + min);
+        alert("CONGRATS YOU GUESSED THE NUMBER");
     }
-})
+    
+    user.setAttribute('value', guess.toString())
+    user.setAttribute('placeholder', guess.toString())
+});
 
 document.getElementById('up').addEventListener('click',() => {
-    let oldGuess = user.value;
-    let newGuess = parseInt(oldGuess) + 1;
+    let oldGuess = parseInt(user.value);
+    let newGuess = oldGuess + 1;
     user.setAttribute('value', newGuess.toString())
+    user.setAttribute('placeholder', newGuess.toString())
 
 });
 
 document.getElementById('down').addEventListener('click',() => {
-    let oldGuess = user.value;
-    let newGuess = parseInt(oldGuess) - 1;
+    let oldGuess = parseInt(user.value);
+    let newGuess = oldGuess - 1;
     user.setAttribute('value', newGuess.toString())
+    user.setAttribute('placeholder', newGuess.toString())
 
 });
 
