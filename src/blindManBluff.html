@@ -3,23 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Blind Man's Bluff - GamePlug</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="bmbStyle.css" rel="stylesheet">
+    <script src="elements.cardmeister.full.js"></script>
 </head>
 <body>
-<header>
-    <h1>Back to <a href="index.html">Gameplug.app</a></h1>
-</header>
+    <header>
+        <h1>Back to <a href="index.html">Game-plug.app</a></h1>
+        <h1>Blind Man's Bluff</h1>
+    </header>
 
     <div class="main">
-        <div class="card-container ">
-
+        <div id="alert"></div>
+        <div class="card-container" id="user" >
+            <div class="card-inner">
+                <playing-card cid="Qh" id="usr" suitcolor="#3B8CDD" rankcolor="#3B8CDD" courtcolors="#3B8CDD,#3B8CDD,#3B8CDD,#3B8CDD,black,4"></playing-card>
+                <playing-card cid="0" id="1" backtext="Game-Plug" backcolor="#3B8CDD"></playing-card>
+            </div>
         </div>
 
-        <div class="card-container ">
-
+        <div class="card-container" >
+            <div class="card-inner">
+                <playing-card cid="Ks" id="cpu" suitcolor="#3B8CDD" rankcolor="#3B8CDD" courtcolors="#3B8CDD,#3B8CDD,#3B8CDD,#3B8CDD,black,4"></playing-card>
+                <playing-card cid="0" id="1" backtext="Game-Plug" backcolor="#3B8CDD"></playing-card>
+            </div>
+        </div>
+        <div class="controller">
+            <div id="userScore">
+                <h2 class="label">User</h2>
+                <h2 id="userNum">0</h2>
+            </div>
+            <button id="shuffle">Shuffle</button>
+            <button id="lower">Lower</button>
+            <button id="higher">Higher</button>
+            <div id="cpuScore">
+                <h2 class="label">CPU</h2>
+                <h2 id="cpuNum">0</h2>
+            </div>
         </div>
     </div>
-    <script type="module" src="index.js"></script>
+
+    <script type="module" src="bmbIndex.js"></script>
 
 </body>
 </html>

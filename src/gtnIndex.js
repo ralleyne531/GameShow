@@ -11,12 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     minRange.addEventListener(('change'), () => {
         user.setAttribute('min', minRange.value);
-        min = parseInt(minRange.value)
+        min = parseInt(minRange.value);
+        user.setAttribute('value', min);
+        user.setAttribute('placeholder', min);
         hiddenNum = Math.floor(Math.random() * max + min);
     });
     maxRange.addEventListener(('change'), () => {
         user.setAttribute('max', maxRange.value);
-        max = parseInt(minRange.value)
+        max = parseInt(minRange.value);
+        user.setAttribute('value', min);
+        user.setAttribute('placeholder', min);
         hiddenNum = Math.floor(Math.random() * max + min);
     });
     
@@ -39,17 +43,23 @@ document.getElementById('submit').addEventListener('click', event =>{
     user.setAttribute('placeholder', guess.toString())
 });
 
-document.getElementById('up').addEventListener('click',() => {
+document.getElementById('right').addEventListener('click',() => {
     let oldGuess = parseInt(user.value);
     let newGuess = oldGuess + 1;
+    if(newGuess > max){
+        newGuess = max;
+    }
     user.setAttribute('value', newGuess.toString())
     user.setAttribute('placeholder', newGuess.toString())
 
 });
 
-document.getElementById('down').addEventListener('click',() => {
+document.getElementById('left').addEventListener('click',() => {
     let oldGuess = parseInt(user.value);
     let newGuess = oldGuess - 1;
+    if(newGuess < min){
+        newGuess = min;
+    }
     user.setAttribute('value', newGuess.toString())
     user.setAttribute('placeholder', newGuess.toString())
 

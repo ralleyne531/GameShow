@@ -8,12 +8,11 @@
 </head>
 <body>
     <header>
-        <h1>Back to <a href="index.html">Gameplug.app</a></h1>
+        <h1>Back to <a href="index.html">Game-plug.app</a></h1>
+        <h1>Guess the Number</h1>
     </header>
 
     <div class="main">
-        <h1>You are playing Guess The Number</h1>
-
         <form action="" id="rangeForm">
             <label for="min">MINIMUM VALUE</label>
             <input type="number" id="min" value="0" placeholder="Lowest possible number">
@@ -22,12 +21,13 @@
         </form>
 
         <form id="guessForm" action="">
-            <label for="guessForm"></label>
-            <div id="input-arrows">
-                <i class="fa-solid fa-chevron-up" id="up"></i>
-                <i class="fa-solid fa-chevron-down" id="down"></i>
-            </div>
+            <label for="guess"></label>
             <input type="number" value="0" id="guess" placeholder="Enter your guess!"> <!--TODO:Max/Min -->
+            <div class="arrows">
+                <i class="fa-solid fa-arrow-left" id="left"></i>
+                <i class="fa-solid fa-arrow-right" id="right"></i>
+            </div>
+
             <button type="submit" id="submit"> Guess! </button>
         </form>
 

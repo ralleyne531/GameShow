@@ -1,4 +1,4 @@
-package BlindMansBluff;
+package JAVA_Program.BlindMansBluff;
 
 import java.util.Random;
 import java.util.Scanner;

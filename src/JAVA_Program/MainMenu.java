@@ -1,5 +1,7 @@
-import BlindMansBluff.BlindMansBluff;
-import GuessTheNumber.GuessTheNumber;
+package JAVA_Program;
+
+import JAVA_Program.BlindMansBluff.BlindMansBluff;
+import JAVA_Program.GuessTheNumber.GuessTheNumber;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package GuessTheNumber;
+package JAVA_Program.GuessTheNumber;
 
 import java.util.Random;
 import java.util.Scanner;

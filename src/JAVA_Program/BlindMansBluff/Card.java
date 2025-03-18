@@ -1,8 +1,4 @@
-package BlindMansBluff;
-
-import javax.swing.*;
-import java.util.Arrays;
-import java.util.Comparator;
+package JAVA_Program.BlindMansBluff;
 
 public class Card {
 
