@@ -12,4 +12,6 @@
 - Navigate to the src directory and run index.html to load the homepage
   - Or, run the html file of a specific game you want to play.
 
+#### The original JAVA version I made of this project is included as well, check it out
+
 ### If you have suggestions, feel free to email or DM me!
