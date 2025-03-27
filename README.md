@@ -11,3 +11,5 @@
 - Clone the repo locally using github cli or in your IDE with the link above
 - Navigate to the src directory and run index.html to load the homepage
   - Or, run the html file of a specific game you want to play.
+
+### If you have suggestions, feel free to email or DM me!
