@@ -4,6 +4,9 @@ let user = document.getElementById('guess');
 let minRange = document.getElementById('min')
 let maxRange = document.getElementById('max');
 let hiddenNum;
+let oldGuess;
+let newGuess;
+
 document.addEventListener('DOMContentLoaded', () => {
     user.min = min
     user.max = max;
@@ -43,15 +46,15 @@ document.getElementById('submit').addEventListener('click', event =>{
 });
 
 document.getElementById('right').addEventListener('click',() => {
-    let oldGuess = parseInt(user.value) || min;
-    let newGuess = Math.min(oldGuess + 1, max);
+    oldGuess = parseInt(user.value) || min;
+    newGuess = Math.min(oldGuess + 1, max);
     user.value = newGuess
 
 });
 
 document.getElementById('left').addEventListener('click',() => {
-    let oldGuess = parseInt(user.value) || min;
-    let newGuess = Math.max(oldGuess - 1, min);
+    oldGuess = parseInt(user.value) || min;
+    newGuess = Math.max(oldGuess - 1, min);
     user.value = newGuess
 });
 
