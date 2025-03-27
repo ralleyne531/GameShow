@@ -94,6 +94,7 @@ playing-card[cid="0"]{
 button{
     background-color: #3B8CDD;
     color: #FFFFFF;
+    font-size: 1.2rem;
     width:24vw;
     height: 16vh;
     border-radius: 75px;

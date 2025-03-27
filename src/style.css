@@ -36,14 +36,24 @@ header a:hover{
 }
 .main{
     grid-area: main;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .main a{
     color:#FFFFFF;
     text-decoration: none;
+    text-align: center;
+    min-height: 30vh;
+    background-position: center;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
 }
 .main a:hover{
     color:#3B8CDD;
+    opacity: 90%;
     text-decoration: underline;
+    text-decoration-style: wavy;
+    background-position: center;
+    background-size:contain ;
 }
+
