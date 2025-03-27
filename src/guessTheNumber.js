@@ -5,23 +5,23 @@ let minRange = document.getElementById('min')
 let maxRange = document.getElementById('max');
 let hiddenNum;
 document.addEventListener('DOMContentLoaded', () => {
-    user.setAttribute('min', min.toString());
-    user.setAttribute('max', max.toString());
-    hiddenNum = Math.floor(Math.random() * max + min);
+    user.min = min
+    user.max = max;
+    hiddenNum = Math.floor(Math.random() * (max - min + 1)) + min;
     
     minRange.addEventListener(('change'), () => {
-        user.setAttribute('min', minRange.value);
+        // user.setAttribute('min', minRange.value);
         min = parseInt(minRange.value);
-        user.setAttribute('value', min);
-        user.setAttribute('placeholder', min);
-        hiddenNum = Math.floor(Math.random() * max + min);
+        user.min = min
+        user.value = min
+        hiddenNum = Math.floor(Math.random() * (max - min + 1)) + min;
     });
     maxRange.addEventListener(('change'), () => {
-        user.setAttribute('max', maxRange.value);
-        max = parseInt(minRange.value);
-        user.setAttribute('value', min);
-        user.setAttribute('placeholder', min);
-        hiddenNum = Math.floor(Math.random() * max + min);
+        // user.setAttribute('max', maxRange.value);
+        max = parseInt(maxRange.value);
+        user.max = max
+        user.value = min;
+        hiddenNum = Math.floor(Math.random() * (max - min + 1)) + min;
     });
     
 });
@@ -35,33 +35,23 @@ document.getElementById('submit').addEventListener('click', event =>{
     } else if (guess > hiddenNum) {
         alert("Too high, try again");
     } else if (guess === hiddenNum) {
-        hiddenNum = Math.floor(Math.random() * max + min);
+        hiddenNum = Math.floor(Math.random() * (max - min + 1)) + min;
         alert("CONGRATS YOU GUESSED THE NUMBER");
     }
     
-    user.setAttribute('value', guess.toString())
-    user.setAttribute('placeholder', guess.toString())
+    user.value = guess;
 });
 
 document.getElementById('right').addEventListener('click',() => {
-    let oldGuess = parseInt(user.value);
-    let newGuess = oldGuess + 1;
-    if(newGuess > max){
-        newGuess = max;
-    }
-    user.setAttribute('value', newGuess.toString())
-    user.setAttribute('placeholder', newGuess.toString())
+    let oldGuess = parseInt(user.value) || min;
+    let newGuess = Math.min(oldGuess + 1, max);
+    user.value = newGuess
 
 });
 
 document.getElementById('left').addEventListener('click',() => {
-    let oldGuess = parseInt(user.value);
-    let newGuess = oldGuess - 1;
-    if(newGuess < min){
-        newGuess = min;
-    }
-    user.setAttribute('value', newGuess.toString())
-    user.setAttribute('placeholder', newGuess.toString())
-
+    let oldGuess = parseInt(user.value) || min;
+    let newGuess = Math.max(oldGuess - 1, min);
+    user.value = newGuess
 });
 
